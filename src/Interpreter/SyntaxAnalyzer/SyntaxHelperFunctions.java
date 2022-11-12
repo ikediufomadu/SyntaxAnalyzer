@@ -63,7 +63,7 @@ public class SyntaxHelperFunctions {
 
     public static Boolean bodyHelper (String symbol) {
         //Goes straight to false because the MUNCHEDWORD is usually empty
-        if (symbol != null) {
+        if (symbol != null && symbol.isEmpty() && symbol.isBlank()){
             System.out.println(symbol + "sfadsfafdafdf");
             for (String s : reservedForBody) {
                 if (symbol.toLowerCase().equals(s) || s.contains(symbol.toLowerCase())) {
