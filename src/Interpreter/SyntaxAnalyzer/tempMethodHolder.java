@@ -1,4 +1,4 @@
-package SyntaxAnalyzer;
+package Interpreter.SyntaxAnalyzer;
 
 public class tempMethodHolder {
     public static void declarations(){}

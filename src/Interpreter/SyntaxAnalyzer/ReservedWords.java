@@ -1,4 +1,4 @@
-package SyntaxAnalyzer;
+package Interpreter.SyntaxAnalyzer;
 
 public class ReservedWords {
     static String[] reservedForMatch = {"program", "identifier", ":", "end"};

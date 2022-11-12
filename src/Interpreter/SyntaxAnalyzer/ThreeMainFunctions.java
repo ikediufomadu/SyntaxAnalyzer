@@ -1,11 +1,12 @@
-package SyntaxAnalyzer;
+package Interpreter.SyntaxAnalyzer;
 
 import java.io.IOException;
 
-import static SyntaxAnalyzer.LexicalAnalyzer.Next.*;
-import static SyntaxAnalyzer.SyntaxHelperFunctions.*;
+import static Interpreter.LexicalAnalyzer.Next.*;
+import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.*;
 
 public class ThreeMainFunctions {
+    // Needs to request next word from Lexical Analyzer
     public static void program() throws IOException {
         match(program);
         match(identifier);

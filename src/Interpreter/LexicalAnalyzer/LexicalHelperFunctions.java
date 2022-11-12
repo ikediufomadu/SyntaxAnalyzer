@@ -1,11 +1,11 @@
-package SyntaxAnalyzer.LexicalAnalyzer;
+package Interpreter.LexicalAnalyzer;
 
 import java.io.IOException;
 
-import static SyntaxAnalyzer.LexicalAnalyzer.Driver.main;
-import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
+import static Interpreter.LexicalAnalyzer.Driver.main;
+import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
+import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
+import static Interpreter.LexicalAnalyzer.ThreeMainFunctions.*;
 
 public class LexicalHelperFunctions {
     static String lostChar = "";

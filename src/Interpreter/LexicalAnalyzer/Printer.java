@@ -1,6 +1,6 @@
-package SyntaxAnalyzer.LexicalAnalyzer;
+package Interpreter.LexicalAnalyzer;
 
-import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.position;
+import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.position;
 
 public class Printer {
     public static void printer(int  currentLine, String munchedWord, String kindValue, String value) {

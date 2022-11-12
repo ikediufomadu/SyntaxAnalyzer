@@ -1,15 +1,15 @@
-package SyntaxAnalyzer.LexicalAnalyzer;
+package Interpreter.LexicalAnalyzer;
 
 import java.io.IOException;
 
-import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.*;
-import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.*;
-import static SyntaxAnalyzer.LexicalAnalyzer.Printer.printer;
-import static SyntaxAnalyzer.LexicalAnalyzer.Reader.sb;
-import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
-import static SyntaxAnalyzer.SyntaxHelperFunctions.programHelper;
-import static SyntaxAnalyzer.SyntaxHelperFunctions.stringToChar;
-import static SyntaxAnalyzer.ThreeMainFunctions.program;
+import static Interpreter.LexicalAnalyzer.GlobalVariables.*;
+import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.*;
+import static Interpreter.LexicalAnalyzer.Printer.printer;
+import static Interpreter.LexicalAnalyzer.Reader.sb;
+import static Interpreter.LexicalAnalyzer.ThreeMainFunctions.*;
+import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.programHelper;
+import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.stringToChar;
+import static Interpreter.SyntaxAnalyzer.ThreeMainFunctions.program;
 
 public class Next {
     static int j = 0;

@@ -1,13 +1,13 @@
-package SyntaxAnalyzer.LexicalAnalyzer;
+package Interpreter.LexicalAnalyzer;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import static SyntaxAnalyzer.LexicalAnalyzer.Driver.main;
-import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.Next.next;
+import static Interpreter.LexicalAnalyzer.Driver.main;
+import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
+import static Interpreter.LexicalAnalyzer.Next.next;
 
 public class Reader {
     public static StringBuilder sb = new StringBuilder();

@@ -1,14 +1,14 @@
-package SyntaxAnalyzer;
+package Interpreter.SyntaxAnalyzer;
 
 import java.io.IOException;
 
-import static SyntaxAnalyzer.Driver.main;
-import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.position;
-import static SyntaxAnalyzer.LexicalAnalyzer.Next.*;
-import static SyntaxAnalyzer.ReservedWords.reservedForBody;
-import static SyntaxAnalyzer.ReservedWords.reservedForMatch;
+import static Interpreter.SyntaxAnalyzer.Driver.main;
+import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
+import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
+import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.position;
+import static Interpreter.LexicalAnalyzer.Next.*;
+import static Interpreter.SyntaxAnalyzer.ReservedWords.reservedForBody;
+import static Interpreter.SyntaxAnalyzer.ReservedWords.reservedForMatch;
 
 public class SyntaxHelperFunctions {
 

@@ -1,10 +1,10 @@
-package SyntaxAnalyzer.LexicalAnalyzer;
+package Interpreter.SyntaxAnalyzer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static SyntaxAnalyzer.LexicalAnalyzer.Reader.reader;
+import static Interpreter.LexicalAnalyzer.Reader.reader;
 
 public class Driver{
     public static void main(String[] args) throws IOException {
@@ -16,5 +16,7 @@ public class Driver{
             System.exit(0);
         }
         reader(fileName);
+        System.out.println("Concluded syntax analysis on " + fileName);
+        main(new String[0]);
     }
 }

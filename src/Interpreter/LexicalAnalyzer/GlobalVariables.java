@@ -1,4 +1,4 @@
-package SyntaxAnalyzer.LexicalAnalyzer;
+package Interpreter.LexicalAnalyzer;
 
 public class GlobalVariables {
     public static int currentLine = 0;
