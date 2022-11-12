@@ -19,6 +19,10 @@ public class Next {
     public static String colon = "";
     public static String end = "";
     public static boolean getColon = false;
+
+    //Program will have to call on the next method, ONCE to begin and then ONCE after each successful match method or body method.
+    //Will have to stop next from going off on its own.
+    // Make sure to uncomment the printer methods because you still need to make sure the file is lexically valid
     //Gets next lexeme
     public static void next() throws IOException {
         //On chance an empty array is passed we return
@@ -35,27 +39,26 @@ public class Next {
             //Prints characters attached and before an unaccepted symbol
             if (wrongInput) {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-                //program();
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
                 System.exit(0);
             }
 
             programHelper(munchedWord);
-            //program();
 
             printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-            //program();
             stringReset();
 
             if (symbolNext) {
                 munchedWord = String.valueOf(TokenInfo.currentChar);
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-                //program();
                 stringReset();
             }
         }
         j++;
         while (!TokenInfo.currentKeyword.equals("end-of-text")  && j <= stringToChar(sb).length - 1) {
+            if (munchedWord != null) {
+                program();
+            }
             next();
         }
     }
