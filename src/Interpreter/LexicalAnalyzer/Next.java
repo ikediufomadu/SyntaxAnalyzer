@@ -14,11 +14,12 @@ import static Interpreter.SyntaxAnalyzer.ThreeMainFunctions.program;
 public class Next {
     static int j = 0;
     public static String munchedWord = "";
-    public static String program = "";
     public static String identifier = "";
     public static String colon = "";
     public static String end = "";
     public static boolean getColon = false;
+    public static boolean getIdentifier = false;
+    public static boolean getProgram = false;
 
     //Program will have to call on the next method, ONCE to begin and then ONCE after each successful match method or body method.
     //Will have to stop next from going off on its own.
@@ -39,18 +40,19 @@ public class Next {
             //Prints characters attached and before an unaccepted symbol
             if (wrongInput) {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
+                programHelper(munchedWord);
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
                 System.exit(0);
             }
 
-            programHelper(munchedWord);
-
             printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
+            programHelper(munchedWord);
             stringReset();
 
             if (symbolNext) {
                 munchedWord = String.valueOf(TokenInfo.currentChar);
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
+                programHelper(munchedWord);
                 stringReset();
             }
         }

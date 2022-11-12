@@ -6,11 +6,21 @@ import static Interpreter.LexicalAnalyzer.Next.*;
 import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.*;
 
 public class ThreeMainFunctions {
-    // Needs to request next word from Lexical Analyzer
     public static void program() throws IOException {
-        match(program);
-        match(identifier);
-        match(colon);
+        if (getProgram) {
+            getProgram = false;
+            match("program");
+        }
+        // Need to send ID name to reservedKeywords
+        if (getIdentifier) {
+            getIdentifier = false;
+            match(identifier);
+        }
+        if (getColon) {
+            getColon = false;
+            match(colon);
+        }
+        // If body comes across the word 'end' it needs to go to the match end method
         body(munchedWord);
         match(end);
     }

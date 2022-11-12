@@ -7,24 +7,32 @@ import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.position;
 import static Interpreter.LexicalAnalyzer.Next.*;
-import static Interpreter.SyntaxAnalyzer.ReservedWords.reservedForBody;
-import static Interpreter.SyntaxAnalyzer.ReservedWords.reservedForMatch;
 
 public class SyntaxHelperFunctions {
+    static String[] reservedForMatch = {"program", identifier,":", "end"};
 
+    static String[] reservedForBody = {"bool", "identifier", "int", "end", "bool", "int", ";", ":=", "if", "then", "else", "fi",
+            "while", "do", "od", "print", "<", "=<", "=", "!=", ">=", ">", "+", "or", "*", "/", "and", "not",
+            "false", "true", "_", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"
+            , "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     public static void SyntaxError (String symbol) throws IOException {
-        System.out.println("Bad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected " + symbol + " change this to actual expected result");
+        System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected '" + identifier + "' CHANGE THIS TO ACTUAL EXPECTED RESULT"
+        + "\nResetting program\n.........\n");
         main(new String[0]);
     }
 
     public static void programHelper (String munchedWord) {
         if (munchedWord.equalsIgnoreCase("program")) {
-            program = munchedWord;
             identifier = munchedWord;
+            getProgram = true;
+            getIdentifier = true;
+            return;
         }
+
         if (identifier.equalsIgnoreCase("program") && !munchedWord.equalsIgnoreCase("program")) {
             identifier = munchedWord;
             getColon = true;
+            return;
         }
         if (getColon) {
             colon = munchedWord;
