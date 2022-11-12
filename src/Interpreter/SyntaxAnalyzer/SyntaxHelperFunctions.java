@@ -26,17 +26,17 @@ public class SyntaxHelperFunctions {
 
     public static void programHelper (String munchedWord) throws IOException {
         if (munchedWord.equalsIgnoreCase("program")) {
-            identifier = munchedWord;
+            identifier = munchedWord.toLowerCase();
             getProgram = true;
             getIdentifier = true;
             return;
         }
 
-        if (identifier.equalsIgnoreCase("program") && !munchedWord.equalsIgnoreCase("program")) {
+        if (identifier.equals("program") && !munchedWord.equalsIgnoreCase("program")) {
             reservedForMatch[1] = munchedWord;
             identifier = reservedForMatch[1];
             skip = true;
-            // Find another way to do this
+//Need to stop the stringReset() method from clearing the value of munch before its used
             program();
             return;
         }

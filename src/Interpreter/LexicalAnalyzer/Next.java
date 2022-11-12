@@ -37,19 +37,19 @@ public class Next {
             //Prints characters attached and before an unaccepted symbol
             if (wrongInput) {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-                programHelper(munchedWord);
+programHelper(munchedWord);
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
                 System.exit(0);
             }
 
             printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-            programHelper(munchedWord);
+programHelper(munchedWord);
             stringReset();
 
             if (symbolNext) {
                 munchedWord = String.valueOf(TokenInfo.currentChar);
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-                programHelper(munchedWord);
+programHelper(munchedWord);
                 stringReset();
             }
         }

@@ -15,6 +15,7 @@ public class ThreeMainFunctions {
         if (getIdentifier) {
             getIdentifier = false;
             if (skip) {
+//Make sure to delete this when the code works on its own
                 skip = false;
                 match(identifier);
             }
