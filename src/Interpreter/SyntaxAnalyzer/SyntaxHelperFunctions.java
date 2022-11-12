@@ -7,9 +7,12 @@ import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.position;
 import static Interpreter.LexicalAnalyzer.Next.*;
+import static Interpreter.SyntaxAnalyzer.ThreeMainFunctions.program;
 
 public class SyntaxHelperFunctions {
-    static String[] reservedForMatch = {"program", identifier,":", "end"};
+
+    public static boolean skip = false;
+    static String[] reservedForMatch = {"program", "",":", "end"};
 
     static String[] reservedForBody = {"bool", "identifier", "int", "end", "bool", "int", ";", ":=", "if", "then", "else", "fi",
             "while", "do", "od", "print", "<", "=<", "=", "!=", ">=", ">", "+", "or", "*", "/", "and", "not",
@@ -21,7 +24,7 @@ public class SyntaxHelperFunctions {
         main(new String[0]);
     }
 
-    public static void programHelper (String munchedWord) {
+    public static void programHelper (String munchedWord) throws IOException {
         if (munchedWord.equalsIgnoreCase("program")) {
             identifier = munchedWord;
             getProgram = true;
@@ -30,13 +33,19 @@ public class SyntaxHelperFunctions {
         }
 
         if (identifier.equalsIgnoreCase("program") && !munchedWord.equalsIgnoreCase("program")) {
-            identifier = munchedWord;
+            reservedForMatch[1] = munchedWord;
+            identifier = reservedForMatch[1];
             getColon = true;
+            skip = true;
+            // Find another way to do this
+            program();
             return;
         }
+
         if (getColon) {
             colon = munchedWord;
-            getColon = false;
+            getBody = true;
+            return;
         }
         if (munchedWord.equalsIgnoreCase("end")) {
             end = munchedWord;

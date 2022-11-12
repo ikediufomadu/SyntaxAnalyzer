@@ -20,6 +20,7 @@ public class Next {
     public static boolean getColon = false;
     public static boolean getIdentifier = false;
     public static boolean getProgram = false;
+    public static boolean getBody = false;
 
     //Program will have to call on the next method, ONCE to begin and then ONCE after each successful match method or body method.
     //Will have to stop next from going off on its own.
