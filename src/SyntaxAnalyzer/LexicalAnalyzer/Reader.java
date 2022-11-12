@@ -36,7 +36,8 @@ public class Reader {
                 }
                 //In case there is a comment at the end of the file this will allow it to be skipped without throughing an arrayoutofbounds error
                 sb.append(" ");
-                next(stringToChar(sb));
+                //Call a method here
+
             }
             br.close();
             fr.close();

@@ -24,7 +24,7 @@ public class ThreeMainFunctions {
         }
     }
     public static void body (String munchedWord) throws IOException {
-        if (matchHelper(munchedWord)) {
+        if (bodyHelper(munchedWord)) {
             System.out.println(munchedWord);
             next(stringToChar(sb));
         }

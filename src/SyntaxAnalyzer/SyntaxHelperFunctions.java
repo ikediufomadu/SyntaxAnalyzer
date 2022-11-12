@@ -17,23 +17,6 @@ public class SyntaxHelperFunctions {
         main(new String[0]);
     }
 
-    public static Boolean matchHelper (String symbol) {
-        for (String s : reservedForMatch) {
-            if (symbol.toLowerCase().equals(s) || s.contains(symbol.toLowerCase())){
-                return true;
-            }
-        }
-        return false;
-    }
-    public static Boolean bodyHelper (String symbol) {
-        for (String s : reservedForBody) {
-            if (symbol.equals(s)){
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static void programHelper (String munchedWord) {
         if (munchedWord.equalsIgnoreCase("program")) {
             program = munchedWord;
@@ -50,6 +33,24 @@ public class SyntaxHelperFunctions {
         if (munchedWord.equalsIgnoreCase("end")) {
             end = munchedWord;
         }
+    }
+
+    public static Boolean matchHelper (String symbol) {
+        for (String s : reservedForMatch) {
+            if (symbol.equals(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Boolean bodyHelper (String symbol) {
+        for (String s : reservedForBody) {
+            if (symbol.toLowerCase().equals(s) || s.contains(symbol.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static char[] stringToChar (StringBuilder sb) {

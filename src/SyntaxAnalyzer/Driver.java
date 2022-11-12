@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static SyntaxAnalyzer.LexicalAnalyzer.Reader.reader;
 import static SyntaxAnalyzer.ThreeMainFunctions.program;
 
 public class Driver{
@@ -15,6 +16,7 @@ public class Driver{
             System.out.println("Exiting program...");
             System.exit(0);
         }
+        reader(fileName);
         program();
         System.out.println("Concluded syntax analysis on " + fileName);
         main(new String[0]);

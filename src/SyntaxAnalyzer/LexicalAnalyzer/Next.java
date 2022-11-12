@@ -1,5 +1,7 @@
 package SyntaxAnalyzer.LexicalAnalyzer;
 
+import java.io.IOException;
+
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.position;
@@ -7,6 +9,7 @@ import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.stringReset;
 import static SyntaxAnalyzer.LexicalAnalyzer.Printer.printer;
 import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
 import static SyntaxAnalyzer.SyntaxHelperFunctions.programHelper;
+import static SyntaxAnalyzer.ThreeMainFunctions.program;
 
 public class Next {
     static int j = 0;
@@ -17,7 +20,7 @@ public class Next {
     public static String end = "";
     public static boolean getColon = false;
     //Gets next lexeme
-    public static void next(char[] charHolder) {
+    public static void next(char[] charHolder) throws IOException {
         //On chance an empty array is passed we return
         if (charHolder.length == 0) {
             return;
@@ -30,6 +33,7 @@ public class Next {
         munchedWord = maxMunch(charToMunch, currentLine);
         if (munchedWord != null) {
             programHelper(munchedWord);
+            program();
             //Prints characters attached and before an unaccepted symbol
             if (wrongInput) {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
