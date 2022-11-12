@@ -7,9 +7,6 @@ import java.io.IOException;
 
 import static SyntaxAnalyzer.LexicalAnalyzer.Driver.main;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.Next.next;
-import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
-import static SyntaxAnalyzer.SyntaxHelperFunctions.stringToChar;
 
 public class Reader {
     public static StringBuilder sb = new StringBuilder();
