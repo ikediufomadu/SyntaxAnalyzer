@@ -12,7 +12,7 @@ import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
 import static SyntaxAnalyzer.SyntaxHelperFunctions.stringToChar;
 
 public class Reader {
-    public static StringBuilder sb;
+    public static StringBuilder sb = new StringBuilder();
 
     public static void reader(String filenameToRead) throws IOException {
         File f = new File("./Test Examples/" + filenameToRead);

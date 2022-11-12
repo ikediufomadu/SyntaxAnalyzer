@@ -18,8 +18,9 @@ public class ThreeMainFunctions {
     }
     // Do second
     public static void match(String symbol) throws IOException {
-        if (matchHelper(symbol)) {
+        if (matchHelper(symbol) || symbol.isEmpty()) {
             //Might have to bypass this by just taking the string from the printer or kind function and then checking it with reserved strings in matchHelper
+            System.out.println(symbol);
             next(stringToChar(sb));
         }
         else {
