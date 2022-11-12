@@ -14,7 +14,6 @@ public class ThreeMainFunctions {
         body (munchedWord);
         match (end);
     }
-    // Do second
     public static void match(String symbol) throws IOException {
         if (matchHelper(symbol)) {
             System.out.println(symbol);
@@ -24,7 +23,6 @@ public class ThreeMainFunctions {
             SyntaxError(symbol);
         }
     }
-    // Do third
     public static void body (String munchedWord) throws IOException {
         if (matchHelper(munchedWord)) {
             System.out.println(munchedWord);

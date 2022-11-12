@@ -19,7 +19,7 @@ public class SyntaxHelperFunctions {
 
     public static Boolean matchHelper (String symbol) {
         for (String s : reservedForMatch) {
-            if (symbol.equals(s)){
+            if (symbol.toLowerCase().equals(s) || s.contains(symbol.toLowerCase())){
                 return true;
             }
         }
