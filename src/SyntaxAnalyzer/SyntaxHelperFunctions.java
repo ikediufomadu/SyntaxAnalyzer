@@ -7,7 +7,8 @@ import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.position;
 import static SyntaxAnalyzer.LexicalAnalyzer.Next.*;
-import static SyntaxAnalyzer.ReservedWords.reserved;
+import static SyntaxAnalyzer.ReservedWords.reservedForBody;
+import static SyntaxAnalyzer.ReservedWords.reservedForMatch;
 
 public class SyntaxHelperFunctions {
 
@@ -17,7 +18,15 @@ public class SyntaxHelperFunctions {
     }
 
     public static Boolean matchHelper (String symbol) {
-        for (String s : reserved) {
+        for (String s : reservedForMatch) {
+            if (symbol.equals(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static Boolean bodyHelper (String symbol) {
+        for (String s : reservedForBody) {
             if (symbol.equals(s)){
                 return true;
             }

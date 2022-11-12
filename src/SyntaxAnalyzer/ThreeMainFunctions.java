@@ -7,8 +7,6 @@ import static SyntaxAnalyzer.LexicalAnalyzer.Reader.sb;
 import static SyntaxAnalyzer.SyntaxHelperFunctions.*;
 
 public class ThreeMainFunctions {
-
-    // Call this within your printer or kind function
     public static void program() throws IOException {
         match (program);
         match (identifier);
@@ -18,8 +16,7 @@ public class ThreeMainFunctions {
     }
     // Do second
     public static void match(String symbol) throws IOException {
-        if (matchHelper(symbol) || symbol.isEmpty()) {
-            //Might have to bypass this by just taking the string from the printer or kind function and then checking it with reserved strings in matchHelper
+        if (matchHelper(symbol)) {
             System.out.println(symbol);
             next(stringToChar(sb));
         }
@@ -28,5 +25,13 @@ public class ThreeMainFunctions {
         }
     }
     // Do third
-    public static void body(String munchedWord){}
+    public static void body (String munchedWord) throws IOException {
+        if (matchHelper(munchedWord)) {
+            System.out.println(munchedWord);
+            next(stringToChar(sb));
+        }
+        else {
+            SyntaxError(munchedWord);
+        }
+    }
 }
