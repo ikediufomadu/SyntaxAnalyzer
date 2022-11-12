@@ -9,8 +9,11 @@ import static SyntaxAnalyzer.LexicalAnalyzer.Driver.main;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.Next.next;
 import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
+import static SyntaxAnalyzer.SyntaxHelperFunctions.stringToChar;
 
 public class Reader {
+    public static StringBuilder sb;
+
     public static void reader(String filenameToRead) throws IOException {
         File f = new File("./Test Examples/" + filenameToRead);
 
@@ -18,7 +21,7 @@ public class Reader {
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String checker;
-            StringBuilder sb = new StringBuilder();
+            sb = new StringBuilder();
 
             //Reads by line
             while ((checker = br.readLine()) != null) {
@@ -33,7 +36,7 @@ public class Reader {
                 }
                 //In case there is a comment at the end of the file this will allow it to be skipped without throughing an arrayoutofbounds error
                 sb.append(" ");
-                next(sb.toString().toCharArray());
+                next(stringToChar(sb));
             }
             br.close();
             fr.close();

@@ -38,4 +38,8 @@ public class SyntaxHelperFunctions {
             end = munchedWord;
         }
     }
+
+    public static char[] stringToChar (StringBuilder sb) {
+        return sb.toString().toCharArray();
+    }
 }

@@ -10,7 +10,7 @@ import static SyntaxAnalyzer.SyntaxHelperFunctions.programHelper;
 
 public class Next {
     static int j = 0;
-    static String munchedWord;
+    public static String munchedWord = "";
     public static String program = "";
     public static String identifier = "";
     public static String colon = "";

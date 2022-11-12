@@ -1,8 +1,8 @@
 package SyntaxAnalyzer;
 
 import static SyntaxAnalyzer.LexicalAnalyzer.Next.*;
-import static SyntaxAnalyzer.SyntaxHelperFunctions.SyntaxError;
-import static SyntaxAnalyzer.SyntaxHelperFunctions.matchHelper;
+import static SyntaxAnalyzer.LexicalAnalyzer.Reader.sb;
+import static SyntaxAnalyzer.SyntaxHelperFunctions.*;
 
 public class ThreeMainFunctions {
 
@@ -11,19 +11,19 @@ public class ThreeMainFunctions {
         match (program);
         match (identifier);
         match (colon);
-        body ();
+        body (munchedWord);
         match (end);
     }
     // Do second
     public static void match(String symbol){
         if (matchHelper(symbol)) {
             //Might have to bypass this by just taking the string from the printer or kind function and then checking it with reserved strings in matchHelper
-            //next();
+            next(stringToChar(sb));
         }
         else {
             SyntaxError(symbol);
         }
     }
     // Do third
-    public static void body(){}
+    public static void body(String munchedWord){}
 }
