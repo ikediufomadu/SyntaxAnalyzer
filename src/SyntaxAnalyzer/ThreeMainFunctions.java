@@ -3,7 +3,6 @@ package SyntaxAnalyzer;
 import java.io.IOException;
 
 import static SyntaxAnalyzer.LexicalAnalyzer.Next.*;
-import static SyntaxAnalyzer.LexicalAnalyzer.Reader.sb;
 import static SyntaxAnalyzer.SyntaxHelperFunctions.*;
 
 public class ThreeMainFunctions {
@@ -16,7 +15,7 @@ public class ThreeMainFunctions {
     }
     public static void match(String symbol) throws IOException {
         if (matchHelper(symbol)) {
-            System.out.println(symbol + "GHEHHHE");
+            System.out.println(symbol + " GHEHHHE");
             next();
         }
         else {
@@ -25,7 +24,7 @@ public class ThreeMainFunctions {
     }
     public static void body (String munchedWord) throws IOException {
         if (bodyHelper(munchedWord)) {
-            System.out.println(munchedWord + "SISISISI");
+            System.out.println(munchedWord + " SISISISI");
             next();
         }
         else {
