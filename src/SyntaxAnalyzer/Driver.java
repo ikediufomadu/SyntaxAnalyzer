@@ -17,7 +17,7 @@ public class Driver{
             System.exit(0);
         }
         reader(fileName);
-        program();
+        //program();
         System.out.println("Concluded syntax analysis on " + fileName);
         main(new String[0]);
     }

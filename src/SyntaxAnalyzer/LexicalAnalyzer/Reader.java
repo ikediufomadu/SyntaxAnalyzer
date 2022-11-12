@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import static SyntaxAnalyzer.LexicalAnalyzer.Driver.main;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
+import static SyntaxAnalyzer.LexicalAnalyzer.Next.next;
 
 public class Reader {
     public static StringBuilder sb = new StringBuilder();
@@ -33,6 +34,7 @@ public class Reader {
                 }
                 //In case there is a comment at the end of the file this will allow it to be skipped without throwing an array out of bounds error
                 sb.append(" ");
+                next();
             }
             br.close();
             fr.close();
