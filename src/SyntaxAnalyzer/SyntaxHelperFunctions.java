@@ -1,5 +1,8 @@
 package SyntaxAnalyzer;
 
+import java.io.IOException;
+
+import static SyntaxAnalyzer.Driver.main;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.position;
@@ -8,8 +11,9 @@ import static SyntaxAnalyzer.ReservedWords.reserved;
 
 public class SyntaxHelperFunctions {
 
-    public static void SyntaxError (String symbol) {
+    public static void SyntaxError (String symbol) throws IOException {
         System.out.println("Bad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected ");
+        main(new String[0]);
     }
 
     public static Boolean matchHelper (String symbol) {

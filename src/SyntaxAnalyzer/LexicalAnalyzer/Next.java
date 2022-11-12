@@ -47,7 +47,7 @@ public class Next {
             }
         }
         j++;
-        while (TokenInfo.currentKeyword != "end-of-text" && j <= charHolder.length - 1) {
+        while (!TokenInfo.currentKeyword.equals("end-of-text")  && j <= charHolder.length - 1) {
             next(charHolder);
         }
     }
