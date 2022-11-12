@@ -1,6 +1,6 @@
 package SyntaxAnalyzer.LexicalAnalyzer;
 
 public class GlobalVariables {
-    static int currentLine = 0;
-    static int currentCharInLine = 0;
+    public static int currentLine = 0;
+    public static int currentCharInLine = 0;
 }

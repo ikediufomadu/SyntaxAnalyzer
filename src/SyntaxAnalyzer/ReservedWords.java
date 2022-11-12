@@ -1,5 +1,5 @@
 package SyntaxAnalyzer;
 
 public class ReservedWords {
-    String[] reserved = {"program", "identifier", ":", "end"};
+    static String[] reserved = {"program", "identifier", ":", "end"};
 }
