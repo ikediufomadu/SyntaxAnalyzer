@@ -34,14 +34,14 @@ public class Reader {
                     if (i + 1 < checker.length() && c == '/' && checker.charAt(i + 1) == '/') break;
                     sb.append(c);
                 }
-                //In case there is a comment at the end of the file this will allow it to be skipped without throughing an arrayoutofbounds error
+                //In case there is a comment at the end of the file this will allow it to be skipped without throwing an array out of bounds error
                 sb.append(" ");
-                //Call a method here
-
             }
             br.close();
             fr.close();
-            kind(null);
+
+            // Figure out if calling kind on the end of file here is still good considering new requirments
+            // kind(null);
         } else {
             System.out.println("The file name you entered does not exist within this program's directory. Please recheck.\n");
             main(new String[0]);

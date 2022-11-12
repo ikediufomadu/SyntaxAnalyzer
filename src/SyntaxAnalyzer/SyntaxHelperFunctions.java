@@ -13,7 +13,7 @@ import static SyntaxAnalyzer.ReservedWords.reservedForMatch;
 public class SyntaxHelperFunctions {
 
     public static void SyntaxError (String symbol) throws IOException {
-        System.out.println("Bad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected ");
+        System.out.println("Bad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected " + symbol + " change this to actual expected result");
         main(new String[0]);
     }
 

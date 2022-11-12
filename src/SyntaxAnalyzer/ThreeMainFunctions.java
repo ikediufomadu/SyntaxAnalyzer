@@ -8,11 +8,11 @@ import static SyntaxAnalyzer.SyntaxHelperFunctions.*;
 
 public class ThreeMainFunctions {
     public static void program() throws IOException {
-        match (program);
-        match (identifier);
-        match (colon);
-        body (munchedWord);
-        match (end);
+        match(program);
+        match(identifier);
+        match(colon);
+        body(munchedWord);
+        match(end);
     }
     public static void match(String symbol) throws IOException {
         if (matchHelper(symbol)) {
