@@ -29,7 +29,7 @@ public class LexicalHelperFunctions {
     }
 
     //Reset variables to analyze next file
-    private static void reset() {
+    public static void reset() {
         currentLine = 0;
         currentCharInLine = 0;
         Next.j = 0;

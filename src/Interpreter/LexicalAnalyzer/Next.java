@@ -15,9 +15,9 @@ public class Next {
     static int j = 0;
     public static String munchedWord = "";
     public static String identifier = "";
-    public static boolean getColon = false;
-    public static boolean getIdentifier = false;
     public static boolean getProgram = false;
+    public static boolean getIdentifier = false;
+    public static boolean getColon = false;
     public static boolean getBody = false;
     public static boolean getEnd = false;
 
@@ -27,6 +27,7 @@ public class Next {
         if (stringToChar(sb).length == 0) {
             return;
         }
+
         char charToMunch = stringToChar(sb)[j];
 
         //Used in the ThreeMainFunctions file to find the next char

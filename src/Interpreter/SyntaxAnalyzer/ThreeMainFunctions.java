@@ -14,11 +14,7 @@ public class ThreeMainFunctions {
         // Need to send ID name to reservedKeywords
         if (getIdentifier) {
             getIdentifier = false;
-            if (skip) {
-//Make sure to delete this when the code works on its own
-                skip = false;
-                match(identifier);
-            }
+            match(identifier);
         }
         if (getColon) {
             getColon = false;
@@ -26,10 +22,10 @@ public class ThreeMainFunctions {
         }
         // If body comes across the word 'end' it needs to go to the match end method
         if (getBody) {
-            getBody = false;
             body(munchedWord);
         }
         if (getEnd) {
+            getBody = false;
             getEnd = false;
             match("end");
         }
