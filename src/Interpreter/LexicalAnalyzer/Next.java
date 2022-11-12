@@ -15,16 +15,12 @@ public class Next {
     static int j = 0;
     public static String munchedWord = "";
     public static String identifier = "";
-    public static String colon = "";
-    public static String end = "";
     public static boolean getColon = false;
     public static boolean getIdentifier = false;
     public static boolean getProgram = false;
     public static boolean getBody = false;
+    public static boolean getEnd = false;
 
-    //Program will have to call on the next method, ONCE to begin and then ONCE after each successful match method or body method.
-    //Will have to stop next from going off on its own.
-    // Make sure to uncomment the printer methods because you still need to make sure the file is lexically valid
     //Gets next lexeme
     public static void next() throws IOException {
         //On chance an empty array is passed we return

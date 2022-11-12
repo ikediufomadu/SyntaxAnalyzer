@@ -35,20 +35,19 @@ public class SyntaxHelperFunctions {
         if (identifier.equalsIgnoreCase("program") && !munchedWord.equalsIgnoreCase("program")) {
             reservedForMatch[1] = munchedWord;
             identifier = reservedForMatch[1];
-            getColon = true;
             skip = true;
             // Find another way to do this
             program();
             return;
         }
 
-        if (getColon) {
-            colon = munchedWord;
+        if (munchedWord.equals(":")) {
+            getColon = true;
             getBody = true;
             return;
         }
         if (munchedWord.equalsIgnoreCase("end")) {
-            end = munchedWord;
+            getEnd = true;
         }
     }
 

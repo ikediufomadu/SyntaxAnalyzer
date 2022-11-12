@@ -14,19 +14,28 @@ public class ThreeMainFunctions {
         // Need to send ID name to reservedKeywords
         if (getIdentifier) {
             getIdentifier = false;
-            match(identifier);
+            if (skip) {
+                skip = false;
+                match(identifier);
+            }
         }
         if (getColon) {
             getColon = false;
-            match(colon);
+            match(":");
         }
         // If body comes across the word 'end' it needs to go to the match end method
-        body(munchedWord);
-        match(end);
+        if (getBody) {
+            getBody = false;
+            body(munchedWord);
+        }
+        if (getEnd) {
+            getEnd = false;
+            match("end");
+        }
     }
     public static void match(String symbol) throws IOException {
         if (matchHelper(symbol)) {
-            System.out.println(symbol + " GHEHHHE");
+            System.out.println(symbol + " THIS IS THE SYMBOL");
             next();
         }
         else {
