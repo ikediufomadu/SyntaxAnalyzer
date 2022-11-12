@@ -8,23 +8,27 @@ import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.*;
 public class ThreeMainFunctions {
     public static void program() throws IOException {
         if (getProgram) {
+            System.out.println("WE ARE IN THE PROGRAM BOOLEAN");
             getProgram = false;
             match("program");
         }
-        // Need to send ID name to reservedKeywords
         if (getIdentifier) {
+            System.out.println("WE ARE IN THE IDENTIFIER BOOLEAN");
             getIdentifier = false;
             match(identifier);
         }
         if (getColon) {
+            System.out.println("WE ARE IN THE COLON BOOLEAN");
             getColon = false;
             match(":");
         }
         // If body comes across the word 'end' it needs to go to the match end method
         if (getBody) {
+            System.out.println("WE ARE IN THE BODY BOOLEAN");
             body(munchedWord);
         }
         if (getEnd) {
+            System.out.println("WE ARE IN THE END BOOLEAN");
             getBody = false;
             getEnd = false;
             match("end");

@@ -7,8 +7,7 @@ import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.*;
 import static Interpreter.LexicalAnalyzer.Printer.printer;
 import static Interpreter.LexicalAnalyzer.Reader.sb;
 import static Interpreter.LexicalAnalyzer.ThreeMainFunctions.*;
-import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.programHelper;
-import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.stringToChar;
+import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.*;
 import static Interpreter.SyntaxAnalyzer.ThreeMainFunctions.program;
 
 public class Next {
@@ -39,18 +38,27 @@ public class Next {
             if (wrongInput) {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
+                if (!getProgram && !getIdentifier && !getColon) {
+                    bodyHelper(munchedWord);
+                }
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
                 System.exit(0);
             }
 
             printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
+            if (!getProgram && !getIdentifier && !getColon) {
+                bodyHelper(munchedWord);
+            }
             stringReset();
 
             if (symbolNext) {
                 munchedWord = String.valueOf(TokenInfo.currentChar);
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
+                if (!getProgram && !getIdentifier && !getColon) {
+                    bodyHelper(munchedWord);
+                }
                 stringReset();
             }
         }
