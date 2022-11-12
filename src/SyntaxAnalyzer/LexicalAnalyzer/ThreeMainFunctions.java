@@ -149,7 +149,7 @@ public class ThreeMainFunctions {
                 return munchedSymbol;
             }
             // >= logic
-            if (charToMunch == '>' && TokenInfo.lastChar == '='){
+            if (charToMunch == '>' && TokenInfo.nextChar == '='){
                 munchedSymbol += charToMunch;
                 munchedSymbol += TokenInfo.nextChar;
                 symbolNext = false;
