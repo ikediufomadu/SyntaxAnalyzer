@@ -7,7 +7,7 @@ import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentLine;
 import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
 
-public class HelperFunctions {
+public class LexicalHelperFunctions {
     static String lostChar = "";
     //Report syntax errors
     public static boolean reportLexicalError(char c) {

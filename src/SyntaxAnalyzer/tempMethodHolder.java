@@ -1,10 +1,6 @@
 package SyntaxAnalyzer;
 
 public class tempMethodHolder {
-    // Do first
-    public static void program(){}
-    // Do second
-    public static void match(String symbol){}
     // Do third
     public static void body(){}
     public static void declarations(){}

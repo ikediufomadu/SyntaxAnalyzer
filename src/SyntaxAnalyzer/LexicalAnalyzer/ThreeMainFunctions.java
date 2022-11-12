@@ -1,7 +1,7 @@
 package SyntaxAnalyzer.LexicalAnalyzer;
 
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.HelperFunctions.*;
+import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.*;
 
 public class ThreeMainFunctions {
     static String munchedString = "";

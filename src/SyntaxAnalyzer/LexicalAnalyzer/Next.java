@@ -1,8 +1,8 @@
 package SyntaxAnalyzer.LexicalAnalyzer;
 
 import static SyntaxAnalyzer.LexicalAnalyzer.GlobalVariables.currentCharInLine;
-import static SyntaxAnalyzer.LexicalAnalyzer.HelperFunctions.position;
-import static SyntaxAnalyzer.LexicalAnalyzer.HelperFunctions.stringReset;
+import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.position;
+import static SyntaxAnalyzer.LexicalAnalyzer.LexicalHelperFunctions.stringReset;
 import static SyntaxAnalyzer.LexicalAnalyzer.Printer.printer;
 import static SyntaxAnalyzer.LexicalAnalyzer.ThreeMainFunctions.*;
 
