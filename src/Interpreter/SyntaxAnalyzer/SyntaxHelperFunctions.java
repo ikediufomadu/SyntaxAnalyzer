@@ -11,7 +11,7 @@ import static Interpreter.LexicalAnalyzer.Next.*;
 
 public class SyntaxHelperFunctions {
 
-    public static String whatTheHell = "";
+    public static String copyMunch = "";
     static String[] reservedForMatch = {"program", "",":", "end"};
 
     static String[] reservedForBody = {"bool", "identifier", "int", "bool", "int", ";", ":=", "if", "then", "else", "fi",
@@ -35,10 +35,10 @@ public class SyntaxHelperFunctions {
         if (identifier.equals("program") && !munchedWord.equalsIgnoreCase("program")) {
             getIdentifier = true;
             for (int i = 0; i < munchedWord.length(); i++) {
-                whatTheHell += munchedWord.charAt(i);
+                copyMunch += munchedWord.charAt(i);
             }
-            reservedForMatch[1] = whatTheHell;
-            identifier = whatTheHell;
+            reservedForMatch[1] = copyMunch;
+            identifier = copyMunch;
             return;
         }
 
