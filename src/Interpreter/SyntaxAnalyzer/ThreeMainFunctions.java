@@ -32,6 +32,9 @@ public class ThreeMainFunctions {
         if (!matchHelper(symbol)) {
             SyntaxError(symbol);
         }
+        else {
+            System.out.println("Matched " + symbol);
+        }
     }
     public static void body (String munchedWord) throws IOException {
         if (!munchedWord.equals("") && !munchedWord.equals(" ") && !munchedWord.contains("\t")) {
