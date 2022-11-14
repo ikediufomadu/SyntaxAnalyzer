@@ -31,35 +31,25 @@ public class Next {
 
         //Used in the ThreeMainFunctions file to find the next char
         TokenInfo nextChar = new TokenInfo(stringToChar(sb), j);
-
         munchedWord = maxMunch(charToMunch, currentLine);
+
         if (munchedWord != null && !munchedWord.isBlank() && !munchedWord.isEmpty()) {
             //Prints characters attached and before an unaccepted symbol
             if (wrongInput) {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-programHelper(munchedWord);
-                if (getBody) {
-                    bodyHelper(munchedWord);
-                }
+                programHelper(munchedWord);
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
                 System.exit(0);
             }
 
             printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-programHelper(munchedWord);
-            if (getBody) {
-                bodyHelper(munchedWord);
-            }
+            programHelper(munchedWord);
             stringReset();
 
             if (symbolNext) {
                 munchedWord = String.valueOf(TokenInfo.currentChar);
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-programHelper(munchedWord);
-                if (getBody && !munchedWord.equals(":")) {
-                    System.out.println(true + " " + munchedWord + " hehehe");
-                    bodyHelper(munchedWord);
-                }
+                programHelper(munchedWord);
                 stringReset();
             }
         }
