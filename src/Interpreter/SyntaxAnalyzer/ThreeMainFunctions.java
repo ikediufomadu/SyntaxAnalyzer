@@ -12,22 +12,23 @@ public class ThreeMainFunctions {
             getProgram = false;
             match("program");
         }
-        if (getIdentifier) {
+        else if (getIdentifier) {
             System.out.println("WE ARE IN THE IDENTIFIER BOOLEAN");
             getIdentifier = false;
             match(identifier);
         }
-        if (getColon) {
+        else if (getColon) {
             System.out.println("WE ARE IN THE COLON BOOLEAN");
             getColon = false;
+            getBody = true;
             match(":");
         }
         // If body comes across the word 'end' it needs to go to the match end method
-        if (getBody) {
+        else if (getBody) {
             System.out.println("WE ARE IN THE BODY BOOLEAN");
             body(munchedWord);
         }
-        if (getEnd) {
+        else if (getEnd) {
             System.out.println("WE ARE IN THE END BOOLEAN");
             getBody = false;
             getEnd = false;
@@ -37,7 +38,7 @@ public class ThreeMainFunctions {
     public static void match(String symbol) throws IOException {
         if (matchHelper(symbol)) {
             System.out.println(symbol + " THIS IS THE SYMBOL");
-            next();
+            //next();
         }
         else {
             SyntaxError(symbol);

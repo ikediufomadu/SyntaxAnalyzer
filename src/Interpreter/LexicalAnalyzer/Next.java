@@ -33,12 +33,13 @@ public class Next {
         TokenInfo nextChar = new TokenInfo(stringToChar(sb), j);
 
         munchedWord = maxMunch(charToMunch, currentLine);
-        if (munchedWord != null) {
+        if (munchedWord != null && !munchedWord.isBlank() && !munchedWord.isEmpty()) {
             //Prints characters attached and before an unaccepted symbol
             if (wrongInput) {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
-                if (!getProgram && !getIdentifier && !getColon) {
+                if (getBody) {
+                    System.out.println(true + " " + munchedWord + " hehe");
                     bodyHelper(munchedWord);
                 }
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
@@ -47,7 +48,8 @@ programHelper(munchedWord);
 
             printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
-            if (!getProgram && !getIdentifier && !getColon) {
+            if (getBody) {
+                System.out.println(true + " " + munchedWord + " hehehe");
                 bodyHelper(munchedWord);
             }
             stringReset();
@@ -56,7 +58,8 @@ programHelper(munchedWord);
                 munchedWord = String.valueOf(TokenInfo.currentChar);
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
-                if (!getProgram && !getIdentifier && !getColon) {
+                if (getBody && !munchedWord.equals(":")) {
+                    System.out.println(true + " " + munchedWord + " hehehe");
                     bodyHelper(munchedWord);
                 }
                 stringReset();

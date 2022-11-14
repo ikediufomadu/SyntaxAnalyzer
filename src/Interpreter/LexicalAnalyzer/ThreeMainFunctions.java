@@ -138,6 +138,9 @@ public class ThreeMainFunctions {
             else if (Character.isDigit(TokenInfo.lastChar)) {
                 symbolNext = true;
                 attachLostParent = false;
+                if (munchedString.length() > 0) {
+                    return munchedString;
+                }
                 return munchedNumber;
             }
             // =< logic
