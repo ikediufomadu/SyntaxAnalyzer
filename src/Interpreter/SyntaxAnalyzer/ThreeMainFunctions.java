@@ -9,7 +9,6 @@ public class ThreeMainFunctions {
     public static void program() throws IOException {
         if (getProgram) {
             getProgram = false;
-            System.out.println("master push went through");
             match("program");
         }
         else if (getIdentifier) {
@@ -25,13 +24,12 @@ public class ThreeMainFunctions {
             body(munchedWord);
         }
         else if (getEnd) {
-//            getEnd = false;
             match("end");
         }
     }
     public static void match(String symbol) throws IOException {
         if (matchHelper(symbol)) {
-            //next();
+           // next();
         }
         else {
             SyntaxError(symbol);

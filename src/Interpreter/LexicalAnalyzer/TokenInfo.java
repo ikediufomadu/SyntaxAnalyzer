@@ -4,8 +4,8 @@ public class TokenInfo {
     static String currentTokenValue;
     static String currentKeyword = "";
     static char lastChar;
-    static char nextChar;
-    static char currentChar;
+    public static char nextChar;
+    public static char currentChar;
 
     public TokenInfo (char[] charHolder, int j){
         if (j > 0) {

@@ -19,6 +19,7 @@ public class Next {
     public static boolean getColon = false;
     public static boolean getBody = false;
     public static boolean getEnd = false;
+    public static char charToMunch;
 
     //Gets next lexeme
     public static void next() throws IOException {
@@ -27,7 +28,7 @@ public class Next {
             return;
         }
 
-        char charToMunch = stringToChar(sb)[j];
+        charToMunch = stringToChar(sb)[j];
 
         //Used in the ThreeMainFunctions file to find the next char
         TokenInfo nextChar = new TokenInfo(stringToChar(sb), j);
