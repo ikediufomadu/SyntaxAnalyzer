@@ -1,6 +1,6 @@
 // This program should print the number 20.
 //FIXME if the program ID is valid the only valid that should come next is a ':'.
-program Twenty b :
+program Twenty:
   int a;
   int b;
   a := 2;
