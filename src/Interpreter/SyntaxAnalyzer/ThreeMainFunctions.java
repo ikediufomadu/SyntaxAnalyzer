@@ -20,14 +20,11 @@ public class ThreeMainFunctions {
             match(":");
             getBody = true;
         }
-        // If body comes across the word 'end' it needs to go to the match end method
         else if (getBody) {
             body(munchedWord);
         }
         else if (getEnd) {
-            getBody = false;
-            getEnd = false;
-            System.out.println(" FSFFEFEFEW");
+//            getEnd = false;
             match("end");
         }
     }
@@ -41,10 +38,7 @@ public class ThreeMainFunctions {
     }
     public static void body (String munchedWord) throws IOException {
         if (!munchedWord.equals("") && !munchedWord.equals(" ") && !munchedWord.contains("\t")) {
-            if (bodyHelper(munchedWord)) {
-                //next();
-            }
-            else {
+            if (!bodyHelper(munchedWord)) {
                 SyntaxError(munchedWord);
             }
         }

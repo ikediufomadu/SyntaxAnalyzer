@@ -8,6 +8,7 @@ import java.io.IOException;
 import static Interpreter.LexicalAnalyzer.Driver.main;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
 import static Interpreter.LexicalAnalyzer.Next.next;
+import static Interpreter.LexicalAnalyzer.ThreeMainFunctions.kind;
 
 public class Reader {
     public static StringBuilder sb = new StringBuilder();
@@ -40,7 +41,7 @@ public class Reader {
             fr.close();
 
             // Figure out if calling kind on the end of file here is still good considering new requirments
-            // kind(null);
+             kind(null);
         } else {
             System.out.println("The file name you entered does not exist within this program's directory. Please recheck.\n");
             main(new String[0]);

@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 
 import static Interpreter.LexicalAnalyzer.Reader.reader;
 
-public class Driver{
+public class Driver {
+    public static String fileName;
     public static void main(String[] args) throws IOException {
         BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Please enter a file to analyze or type \"quit\" to exit the program\nEG: \"hello.txt\" ");
@@ -16,5 +17,7 @@ public class Driver{
             System.exit(0);
         }
         reader(fileName);
+        main(new String[0]);
     }
 }
+

@@ -2,6 +2,7 @@ package Interpreter.LexicalAnalyzer;
 
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.*;
+import static Interpreter.LexicalAnalyzer.Driver.fileName;
 
 public class ThreeMainFunctions {
     static String munchedString = "";
@@ -14,9 +15,10 @@ public class ThreeMainFunctions {
 
     //Get kind of lexeme
     public static String kind (String munchedWord) {
+        //TODO figure out why filename isn't being sent
         if (munchedWord == null){
             TokenInfo.currentKeyword = "end-of-text";
-            System.out.println("Reached the end of the file.\n...\nResetting program\n\n");
+            System.out.println("Reached the end of the file.\nConcluded syntax analysis on " + fileName + "\nResetting program\n\n");
             sequenceKeepRunning();
         }
         char tFirstChar;

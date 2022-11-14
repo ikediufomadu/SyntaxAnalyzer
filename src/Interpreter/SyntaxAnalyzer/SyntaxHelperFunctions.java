@@ -2,8 +2,8 @@ package Interpreter.SyntaxAnalyzer;
 
 import java.io.IOException;
 
+import static Interpreter.LexicalAnalyzer.Driver.main;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.reset;
-import static Interpreter.SyntaxAnalyzer.Driver.main;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.position;
@@ -16,7 +16,7 @@ public class SyntaxHelperFunctions {
 
     static String[] reservedForBody = {"bool", "identifier", "int", "bool", "int", ";", ":=", "if", "then", "else", "fi",
             "while", "do", "od", "print", "<", "=<", "=", "!=", ">=", ">", "+", "or", "*", "/", "(", ")","and", "not",
-            "false", "true", "_", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"
+            "false", "true", "-","_", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"
             , "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     public static void SyntaxError (String symbol) throws IOException {
         System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected '" + symbol + "' CHANGE THIS TO ACTUAL EXPECTED RESULT"
@@ -47,7 +47,9 @@ public class SyntaxHelperFunctions {
             return;
         }
         if (munchedWord.equalsIgnoreCase("end")) {
+            getBody = false;
             getEnd = true;
+            System.out.println(getEnd);
         }
     }
 
@@ -61,15 +63,14 @@ public class SyntaxHelperFunctions {
     }
 
     public static Boolean bodyHelper (String symbol) {
-        //Goes straight to false because the MUNCHEDWORD is usually empty
         if (symbol != null && !symbol.isEmpty() && !symbol.isBlank()&& !symbol.equals(" ") && !munchedWord.contains("\t")){
             for (String s : reservedForBody) {
                 if (symbol.toLowerCase().equals(s) || s.contains(symbol.toLowerCase())) {
-                    //System.out.println("Found match for " + symbol);
+                    System.out.println("Found match for " + symbol);
                     return true;
                 }
             }
-          //  System.out.println("Failed to find match for " + symbol);
+            System.out.println("Failed to find match for " + symbol);
         }
         return false;
     }
