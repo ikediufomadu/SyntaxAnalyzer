@@ -13,12 +13,6 @@ import static Interpreter.SyntaxAnalyzer.ThreeMainFunctions.program;
 public class Next {
     static int j = 0;
     public static String munchedWord = "";
-    public static String identifier = "";
-    public static boolean getProgram = false;
-    public static boolean getIdentifier = false;
-    public static boolean getColon = false;
-    public static boolean getBody = false;
-    public static boolean getEnd = false;
     public static char charToMunch;
 
     //Gets next lexeme
@@ -37,28 +31,22 @@ public class Next {
         if (munchedWord != null && !munchedWord.isBlank() && !munchedWord.isEmpty()) {
             //Prints characters attached and before an unaccepted symbol
             if (wrongInput) {
-                printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-                programHelper(munchedWord);
+                program();
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
                 System.exit(0);
             }
 
-            printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-            programHelper(munchedWord);
+            program();
             stringReset();
 
             if (symbolNext) {
                 munchedWord = String.valueOf(TokenInfo.currentChar);
-                printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
-                programHelper(munchedWord);
+                program();
                 stringReset();
             }
         }
         j++;
         while (!TokenInfo.currentKeyword.equals("end-of-text")  && j <= stringToChar(sb).length - 1) {
-            if (munchedWord != null) {
-                program();
-            }
             next();
         }
     }

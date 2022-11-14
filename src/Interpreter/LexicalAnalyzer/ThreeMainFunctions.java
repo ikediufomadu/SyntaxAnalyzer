@@ -5,8 +5,6 @@ import java.io.IOException;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.*;
 import static Interpreter.LexicalAnalyzer.Driver.fileName;
-import static Interpreter.LexicalAnalyzer.Next.getEnd;
-import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.SyntaxError;
 
 public class ThreeMainFunctions {
     static String munchedString = "";
@@ -22,9 +20,6 @@ public class ThreeMainFunctions {
         //TODO figure out why filename isn't being sent
         if (munchedWord == null){
             TokenInfo.currentKeyword = "end-of-text";
-            if (!getEnd) {
-                SyntaxError(null);
-            }
             System.out.println("Reached the end of the file.\nConcluded syntax analysis on " + fileName + "\nResetting program\n\n");
             sequenceKeepRunning();
         }

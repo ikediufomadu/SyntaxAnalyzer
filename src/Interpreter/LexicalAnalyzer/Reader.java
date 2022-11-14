@@ -40,7 +40,7 @@ public class Reader {
             br.close();
             fr.close();
 
-            // Figure out if calling kind on the end of file here is still good considering new requirments
+            // Figure out if calling kind on the end of file here is still good considering new requirements
              kind(null);
         } else {
             System.out.println("The file name you entered does not exist within this program's directory. Please recheck.\n");
