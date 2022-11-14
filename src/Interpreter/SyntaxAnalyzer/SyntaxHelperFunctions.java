@@ -44,7 +44,6 @@ public class SyntaxHelperFunctions {
 
         if (munchedWord.equals(":")) {
             getColon = true;
-            getBody = true;
             return;
         }
         if (munchedWord.equalsIgnoreCase("end")) {
@@ -64,12 +63,13 @@ public class SyntaxHelperFunctions {
     public static Boolean bodyHelper (String symbol) {
         //Goes straight to false because the MUNCHEDWORD is usually empty
         if (symbol != null && !symbol.isEmpty() && !symbol.isBlank()){
-            System.out.println(symbol + "sfadsfafdafdf");
             for (String s : reservedForBody) {
                 if (symbol.toLowerCase().equals(s) || s.contains(symbol.toLowerCase())) {
+                    System.out.println("Found match for " + symbol);
                     return true;
                 }
             }
+            System.out.println("Failed to find match for " + symbol);
         }
         return false;
     }

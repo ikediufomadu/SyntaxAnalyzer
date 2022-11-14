@@ -39,7 +39,6 @@ public class Next {
                 printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
                 if (getBody) {
-                    System.out.println(true + " " + munchedWord + " hehe");
                     bodyHelper(munchedWord);
                 }
                 System.out.println("\nIllegal character at " + position(currentLine, currentCharInLine) + ". Character is '" + charToMunch + "'.\nExiting program...");
@@ -49,7 +48,6 @@ programHelper(munchedWord);
             printer(currentLine, munchedWord, kind(munchedWord), value(munchedWord));
 programHelper(munchedWord);
             if (getBody) {
-                System.out.println(true + " " + munchedWord + " hehehe");
                 bodyHelper(munchedWord);
             }
             stringReset();

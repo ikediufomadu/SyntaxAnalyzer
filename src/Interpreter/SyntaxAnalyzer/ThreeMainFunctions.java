@@ -20,8 +20,8 @@ public class ThreeMainFunctions {
         else if (getColon) {
             System.out.println("WE ARE IN THE COLON BOOLEAN");
             getColon = false;
-            getBody = true;
             match(":");
+            getBody = true;
         }
         // If body comes across the word 'end' it needs to go to the match end method
         else if (getBody) {
