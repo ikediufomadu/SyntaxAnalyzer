@@ -9,6 +9,7 @@ public class ThreeMainFunctions {
     public static void program() throws IOException {
         if (getProgram) {
             getProgram = false;
+            System.out.println("master push went through");
             match("program");
         }
         else if (getIdentifier) {
