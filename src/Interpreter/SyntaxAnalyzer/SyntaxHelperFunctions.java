@@ -1,7 +1,5 @@
 package Interpreter.SyntaxAnalyzer;
 
-import Interpreter.LexicalAnalyzer.TokenInfo;
-
 import java.io.IOException;
 
 import static Interpreter.LexicalAnalyzer.Driver.main;
@@ -10,33 +8,45 @@ import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.position;
 import static Interpreter.LexicalAnalyzer.Next.*;
+import static Interpreter.SyntaxAnalyzer.SyntaxThreeMainFunctions.*;
 
 public class SyntaxHelperFunctions {
     public static String copyMunch = "";
     static String[] reservedForMatch = {"program", "",":", "end"};
-    public static boolean noColon = false;
 
     static String[] reservedForBody = {"bool", "identifier", "int", "bool", "int", ";", ":=", "if", "then", "else", "fi",
             "while", "do", "od", "print", "<", "=<", "=", "!=", ">=", ">", "+", "or", "*", "/", "(", ")","and", "not",
             "false", "true", "-","_", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"
             , "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     public static void SyntaxError (String symbol) throws IOException {
-        System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected '" + symbol + "' CHANGE THIS TO ACTUAL EXPECTED RESULT"
-        + "\nResetting program\n.........\n");
+        // TODO Get new if conditions
+        if (skip1Syntax) {
+            System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected 'program'.\nResetting program\n.........\n");
+        }
+        else if (skip2Syntax) {
+            System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected an identifier.\nResetting program\n.........\n");
+        }
+        else if (skip3Syntax) {
+            System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected ':'.\nResetting program\n.........\n");
+        }
+        else if (skip4Syntax) {
+            System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected ';'.\nResetting program\n.........\n");
+        }
+        else if (skip5Syntax) {
+            System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected 'end'.\nResetting program\n.........\n");
+        }
         reset();
         main(new String[0]);
     }
 
-//    public static String whatIdentifier (String munchedWord)  {
-//        String
-//            for (int i = 0; i < munchedWord.length(); i++) {
-//                copyMunch += munchedWord.charAt(i);
-//            }
-//            reservedForMatch[1] = copyMunch;
-//        String identifier = copyMunch;
-//            return;
-//
-//    }
+    public static void whatIdentifier (String munchedWord)  {
+        getID = false;
+        for (int i = 0; i < munchedWord.length(); i++) {
+            copyMunch += munchedWord.charAt(i);
+        }
+        reservedForMatch[1] = copyMunch;
+        copyMunch = "";
+    }
 
     public static Boolean matchHelper (String symbol) {
         for (String s : reservedForMatch) {

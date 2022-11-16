@@ -5,7 +5,7 @@ import java.io.IOException;
 import static Interpreter.LexicalAnalyzer.Driver.main;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
-import static Interpreter.LexicalAnalyzer.ThreeMainFunctions.*;
+import static Interpreter.LexicalAnalyzer.LexicalThreeMainFunctions.*;
 
 public class LexicalHelperFunctions {
     static String lostChar = "";

@@ -6,7 +6,7 @@ import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.*;
 import static Interpreter.LexicalAnalyzer.Driver.fileName;
 
-public class ThreeMainFunctions {
+public class LexicalThreeMainFunctions {
     static String munchedString = "";
     static String munchedNumber = "";
     static String munchedSymbol = "";

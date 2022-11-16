@@ -8,13 +8,13 @@ import java.io.IOException;
 import static Interpreter.LexicalAnalyzer.Driver.main;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
 import static Interpreter.LexicalAnalyzer.Next.next;
-import static Interpreter.LexicalAnalyzer.ThreeMainFunctions.kind;
+import static Interpreter.LexicalAnalyzer.LexicalThreeMainFunctions.kind;
 
 public class Reader {
     public static StringBuilder sb = new StringBuilder();
 
     public static void reader(String filenameToRead) throws IOException {
-        File f = new File("./Test Examples/" + filenameToRead);
+        File f = new File(filenameToRead);
 
         if (f.exists() && !f.isDirectory() && f.isFile() && f.canRead()) {
             FileReader fr = new FileReader(f);
