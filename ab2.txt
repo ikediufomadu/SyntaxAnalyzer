@@ -1,5 +1,5 @@
 // This program should print the number 20.
-program sdfjnkafjasdf:
+program twenty:
   int a;
   int b;
   a := 2;

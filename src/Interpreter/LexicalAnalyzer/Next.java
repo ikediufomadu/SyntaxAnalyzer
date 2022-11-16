@@ -1,5 +1,7 @@
 package Interpreter.LexicalAnalyzer;
 
+import Interpreter.SyntaxAnalyzer.SyntaxThreeMainFunctions;
+
 import java.io.IOException;
 
 import static Interpreter.LexicalAnalyzer.GlobalVariables.*;
@@ -46,6 +48,9 @@ public class Next {
             if (!firstWord && lastWord.equals("program")) {
                 lastWord = "";
                 getID = true;
+            }
+            if (munchedWord.equalsIgnoreCase("end")) {
+                SyntaxThreeMainFunctions.startEnd = true;
             }
             program();
             stringReset();

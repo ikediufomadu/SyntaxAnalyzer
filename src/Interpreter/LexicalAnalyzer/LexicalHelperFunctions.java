@@ -6,6 +6,7 @@ import static Interpreter.LexicalAnalyzer.Driver.main;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentLine;
 import static Interpreter.LexicalAnalyzer.LexicalThreeMainFunctions.*;
+import static Interpreter.SyntaxAnalyzer.SyntaxThreeMainFunctions.*;
 
 public class LexicalHelperFunctions {
     static String lostChar = "";
@@ -33,6 +34,24 @@ public class LexicalHelperFunctions {
         currentLine = 0;
         currentCharInLine = 0;
         Next.j = 0;
+        startBody = false;
+        startEnd = false;
+        skipError1 = true;
+        skipError2 = true;
+        skipError3 = true;
+        skipError4 = true;
+        skipError5 = true;
+        skip1Syntax = false;
+        skip2Syntax = false;
+        skip3Syntax = false;
+        skip4Syntax = false;
+        skip5Syntax = false;
+        munchedString = "";
+        munchedNumber = "";
+        munchedSymbol = "";
+        wrongInput = false;
+        symbolNext = false;
+        attachLostParent = false;
     }
     public static void stringReset(){
         if (munchedString.length() == 1) {

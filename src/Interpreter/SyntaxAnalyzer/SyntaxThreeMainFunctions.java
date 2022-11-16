@@ -4,12 +4,14 @@ import Interpreter.LexicalAnalyzer.TokenInfo;
 
 import java.io.IOException;
 
+import static Interpreter.LexicalAnalyzer.Driver.fileName;
+import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.sequenceKeepRunning;
 import static Interpreter.LexicalAnalyzer.Next.*;
 import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.*;
 
 public class SyntaxThreeMainFunctions {
-    public static boolean startBody;
-    public static boolean startEnd;
+    public static boolean startBody = false;
+    public static boolean startEnd = false;
     public static boolean skipError1 = true;
     public static boolean skipError2 = true;
     public static boolean skipError3 = true;
@@ -63,21 +65,15 @@ public class SyntaxThreeMainFunctions {
             SyntaxError(munchedWord);
         }
 
-        if (startBody && !munchedWord.equals("end")) {
-            skipError4 = false;
+        if (startBody && !startEnd) {
             body(munchedWord);
             return;
         }
-        else if (skipError4) {
-            skip4Syntax = true;
-            SyntaxError(munchedWord);
-        }
 
         if (munchedWord.equalsIgnoreCase("end")) {
-            startEnd = true;
-            startBody = false;
             match("end");
-            return;
+            System.out.println("\nReached the end of the file.\nConcluded syntax analysis on " + fileName + "\nResetting program\n\n");
+            sequenceKeepRunning();
         }
         else if (skipError5){
             skip5Syntax = true;
@@ -97,6 +93,7 @@ public class SyntaxThreeMainFunctions {
     public static void body (String munchedWord) throws IOException {
         if (!munchedWord.equals("") && !munchedWord.equals(" ") && !munchedWord.contains("\t") && !munchedWord.equals(":")) {
             if (!bodyHelper(munchedWord)) {
+                skip4Syntax = true;
                 SyntaxError(munchedWord);
             }
         }

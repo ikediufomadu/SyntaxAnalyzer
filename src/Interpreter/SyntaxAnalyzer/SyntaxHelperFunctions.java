@@ -19,7 +19,6 @@ public class SyntaxHelperFunctions {
             "false", "true", "-","_", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"
             , "l", "m", "n", "o", "p", "q", "u", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     public static void SyntaxError (String symbol) throws IOException {
-        // TODO Get new if conditions
         if (skip1Syntax) {
             System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected 'program'.\nResetting program\n.........\n");
         }
@@ -30,7 +29,7 @@ public class SyntaxHelperFunctions {
             System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected ':'.\nResetting program\n.........\n");
         }
         else if (skip4Syntax) {
-            System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected ';'.\nResetting program\n.........\n");
+            System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected CHANGE THIS TO WHATEVER THE CASE IS.\nResetting program\n.........\n");
         }
         else if (skip5Syntax) {
             System.out.println("\nBad symbol '" + symbol + "' at " + position(currentLine, currentCharInLine) + " expected 'end'.\nResetting program\n.........\n");
@@ -66,6 +65,7 @@ public class SyntaxHelperFunctions {
                 }
             }
             System.out.println("Failed to match " + symbol);
+            return false;
         }
         return false;
     }

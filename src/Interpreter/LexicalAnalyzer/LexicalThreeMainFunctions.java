@@ -1,10 +1,14 @@
 package Interpreter.LexicalAnalyzer;
 
+import Interpreter.SyntaxAnalyzer.SyntaxThreeMainFunctions;
+
 import java.io.IOException;
 
 import static Interpreter.LexicalAnalyzer.GlobalVariables.currentCharInLine;
 import static Interpreter.LexicalAnalyzer.LexicalHelperFunctions.*;
 import static Interpreter.LexicalAnalyzer.Driver.fileName;
+import static Interpreter.SyntaxAnalyzer.SyntaxHelperFunctions.SyntaxError;
+import static Interpreter.SyntaxAnalyzer.SyntaxThreeMainFunctions.startEnd;
 
 public class LexicalThreeMainFunctions {
     static String munchedString = "";
@@ -19,6 +23,10 @@ public class LexicalThreeMainFunctions {
     public static String kind (String munchedWord) throws IOException {
         //TODO figure out why filename isn't being sent
         if (munchedWord == null){
+            if (!startEnd) {
+                SyntaxThreeMainFunctions.skip5Syntax = true;
+                SyntaxError(null);
+            }
             TokenInfo.currentKeyword = "end-of-text";
             System.out.println("Reached the end of the file.\nConcluded syntax analysis on " + fileName + "\nResetting program\n\n");
             sequenceKeepRunning();
